@@ -28,4 +28,8 @@ public class transacaoService {
         }
         transacaoDto.add(dto);
     }
+
+    public void deletarTransacoesService(){
+        transacaoDto.clear();
+    }
 }

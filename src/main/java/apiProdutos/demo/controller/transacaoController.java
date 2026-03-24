@@ -19,4 +19,10 @@ public class transacaoController {
         transacaoService.adicionarTransacaoService(dto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deletarTransacoesController(){
+        transacaoService.deletarTransacoesService();
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 }
