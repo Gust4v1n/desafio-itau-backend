@@ -32,4 +32,12 @@ public class transacaoService {
     public void deletarTransacoesService(){
         transacaoDto.clear();
     }
+
+    //apenas para eu conseguir fazer o estatistica
+    //retornando apenas as transacoes dos ultimos 60 segundos :)
+    public List<transacaoDto> verTransacoes(){
+        OffsetDateTime tempoIntervalo = OffsetDateTime.now().minusSeconds(60);
+        List transacoes1Minuto = transacaoDto.stream().filter(p->p.dataHora().isAfter(tempoIntervalo)).toList();
+        return transacoes1Minuto;
+    }
 }
